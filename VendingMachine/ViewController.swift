@@ -121,8 +121,10 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
             do {
                 try vendingMachine.vend(currentSelection, quantity: quantity)
                 updateBalanceLabel()
-            } catch {
-                // FIXME: Error handling code!!!
+            } catch VendingMachineError.OutOfStock {
+                showAlert()
+            }   catch {
+                
             }
         } else {
             // FIXME: Alert user to no selection
@@ -157,9 +159,17 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     }
     
     func showAlert() {
-        let alertController = UIAlertController(title: "Out of Stock", message: nil, preferredStyle: UIAlertControllerStyle.Alert)
+        let alertController = UIAlertController(title: "Out of Stock", message: nil, preferredStyle: .Alert)
+        
+        // Handler is the dismissAlert function which takes okAction like a sender and then resets the vending machine when the OK button is tapped.
+        let okAction = UIAlertAction(title: "OK", style: .Default, handler: dismissAlert)
+        alertController.addAction(okAction)
         
         presentViewController(alertController, animated: true, completion: nil)
+    }
+    
+    func dismissAlert(sender: UIAlertAction) {
+        reset()
     }
 }
 
