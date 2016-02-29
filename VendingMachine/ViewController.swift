@@ -155,5 +155,11 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         updateQuantityLabel()
         // FIXME: sender.value remains same although "quantity" visually gets back to 1 on the view.
     }
+    
+    func showAlert() {
+        let alertController = UIAlertController(title: "Out of Stock", message: nil, preferredStyle: UIAlertControllerStyle.Alert)
+        
+        presentViewController(alertController, animated: true, completion: nil)
+    }
 }
 
