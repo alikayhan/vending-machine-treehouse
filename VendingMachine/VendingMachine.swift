@@ -138,7 +138,7 @@ class VendingMachine: VendingMachineType {
         }
         
         guard item.price * quantity < amountDeposited else {
-            throw VendingMachineError.InsufficientFunds(required: item.price - amountDeposited)
+            throw VendingMachineError.InsufficientFunds(required: item.price * quantity - amountDeposited)
         }
         
         item.quantity -= quantity
