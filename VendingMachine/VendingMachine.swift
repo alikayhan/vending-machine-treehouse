@@ -141,9 +141,10 @@ class VendingMachine: VendingMachineType {
             throw VendingMachineError.InsufficientFunds(required: item.price * quantity - amountDeposited)
         }
         
+        amountDeposited -= item.price * quantity
         item.quantity -= quantity
         inventory.updateValue(item, forKey: selection)
-        amountDeposited -= item.price * quantity
+        
     }
     
     func itemForCurrentSelection(selection: VendingSelection) -> ItemType? {

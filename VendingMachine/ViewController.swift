@@ -126,10 +126,9 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
             }   catch VendingMachineError.InvalidSelection {
                 showAlert("Invalid Selection")
             }   catch VendingMachineError.InsufficientFunds (let required) {
-                showAlert("Insufficient Funds. Deposit $\(required)")
-                //FIXME: The cases leading this error also lead a crash!!!
-            }   catch {
-                
+                showAlert("Insufficient Funds", message: "Please deposit $\(required) to complete the purchase.")
+            }   catch let error {
+                fatalError("\(error)")
             }
         } else {
             showAlert("No Selection")
@@ -163,8 +162,8 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         // FIXME: sender.value remains same although "quantity" visually gets back to 1 on the view.
     }
     
-    func showAlert(title: String) {
-        let alertController = UIAlertController(title: title, message: nil, preferredStyle: .Alert)
+    func showAlert(title: String, message: String? = nil) {
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: .Alert)
         
         // Handler is the dismissAlert function which takes okAction like a sender and then resets the vending machine when the OK button is tapped.
         let okAction = UIAlertAction(title: "OK", style: .Default, handler: dismissAlert)
