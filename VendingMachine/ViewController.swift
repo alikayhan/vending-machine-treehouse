@@ -122,12 +122,17 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
                 try vendingMachine.vend(currentSelection, quantity: quantity)
                 updateBalanceLabel()
             } catch VendingMachineError.OutOfStock {
-                showAlert()
+                showAlert("Out of Stock")
+            }   catch VendingMachineError.InvalidSelection {
+                showAlert("Invalid Selection")
+            }   catch VendingMachineError.InsufficientFunds(let required) {
+                showAlert("Insufficient Funds. Deposit $\(required).")
+                //FIXME: The cases leading this error also lead a crash!!!
             }   catch {
                 
             }
         } else {
-            // FIXME: Alert user to no selection
+            showAlert("No Selection")
         }
     }
     
@@ -158,8 +163,8 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         // FIXME: sender.value remains same although "quantity" visually gets back to 1 on the view.
     }
     
-    func showAlert() {
-        let alertController = UIAlertController(title: "Out of Stock", message: nil, preferredStyle: .Alert)
+    func showAlert(title: String) {
+        let alertController = UIAlertController(title: title, message: nil, preferredStyle: .Alert)
         
         // Handler is the dismissAlert function which takes okAction like a sender and then resets the vending machine when the OK button is tapped.
         let okAction = UIAlertAction(title: "OK", style: .Default, handler: dismissAlert)
