@@ -181,6 +181,7 @@
                         <outlet property="balanceLabel" destination="T4d-xZ-BoX" id="teE-Tl-Pi0"/>
                         <outlet property="collectionView" destination="8OG-jm-3JZ" id="40h-Bj-3fx"/>
                         <outlet property="quantityLabel" destination="ehp-um-cli" id="sOx-UY-fe6"/>
+                        <outlet property="stepper" destination="xsJ-mF-Vul" id="u4l-5K-1Zh"/>
                         <outlet property="totalLabel" destination="eqM-sa-SEQ" id="SC7-N0-w1h"/>
                     </connections>
                 </viewController>

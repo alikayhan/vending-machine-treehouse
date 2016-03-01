@@ -155,11 +155,13 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         balanceLabel.text = "$\(vendingMachine.amountDeposited)"
     }
     
+    @IBOutlet weak var stepper: UIStepper!
+    
     func reset() {
         quantity = 1.0
+        stepper.value = 1
         updateTotalPriceLabel()
         updateQuantityLabel()
-        // FIXME: sender.value remains same although "quantity" visually gets back to 1 on the view.
     }
     
     func showAlert(title: String, message: String? = nil) {
