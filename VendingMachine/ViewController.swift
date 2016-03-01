@@ -125,8 +125,8 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
                 showAlert("Out of Stock")
             }   catch VendingMachineError.InvalidSelection {
                 showAlert("Invalid Selection")
-            }   catch VendingMachineError.InsufficientFunds(let required) {
-                showAlert("Insufficient Funds. Deposit $\(required).")
+            }   catch VendingMachineError.InsufficientFunds (let required) {
+                showAlert("Insufficient Funds. Deposit $\(required)")
                 //FIXME: The cases leading this error also lead a crash!!!
             }   catch {
                 
