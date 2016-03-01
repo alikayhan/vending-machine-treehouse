@@ -154,7 +154,6 @@ class VendingMachine: VendingMachineType {
     
     
     func deposit(amount: Double) {
-        //TODO: Add method body.
         amountDeposited += amount
     }
 }

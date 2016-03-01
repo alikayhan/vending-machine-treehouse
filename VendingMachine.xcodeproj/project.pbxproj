@@ -15,6 +15,7 @@
 		97EC97B11C4E8C7F0081754A /* VendingItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97EC97B01C4E8C7F0081754A /* VendingItemCell.swift */; };
 		97EC97B31C4E9CA90081754A /* VendingInventory.plist in Resources */ = {isa = PBXBuildFile; fileRef = 97EC97B21C4E9CA90081754A /* VendingInventory.plist */; };
 		B8D417ED1C7B6B4B008087BD /* VendingMachine.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D417EC1C7B6B4B008087BD /* VendingMachine.swift */; };
+		B8F7CA141C85D39D004CF849 /* DepositController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F7CA131C85D39D004CF849 /* DepositController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		97EC97B01C4E8C7F0081754A /* VendingItemCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VendingItemCell.swift; sourceTree = "<group>"; };
 		97EC97B21C4E9CA90081754A /* VendingInventory.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = VendingInventory.plist; sourceTree = "<group>"; };
 		B8D417EC1C7B6B4B008087BD /* VendingMachine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VendingMachine.swift; sourceTree = "<group>"; };
+		B8F7CA131C85D39D004CF849 /* DepositController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DepositController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +71,7 @@
 				97EC97AA1C4E80860081754A /* Info.plist */,
 				97EC97B21C4E9CA90081754A /* VendingInventory.plist */,
 				B8D417EC1C7B6B4B008087BD /* VendingMachine.swift */,
+				B8F7CA131C85D39D004CF849 /* DepositController.swift */,
 			);
 			path = VendingMachine;
 			sourceTree = "<group>";
@@ -147,6 +150,7 @@
 			files = (
 				97EC97A11C4E80860081754A /* ViewController.swift in Sources */,
 				97EC979F1C4E80860081754A /* AppDelegate.swift in Sources */,
+				B8F7CA141C85D39D004CF849 /* DepositController.swift in Sources */,
 				97EC97B11C4E8C7F0081754A /* VendingItemCell.swift in Sources */,
 				B8D417ED1C7B6B4B008087BD /* VendingMachine.swift in Sources */,
 			);
